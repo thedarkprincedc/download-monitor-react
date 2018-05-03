@@ -19,6 +19,7 @@ const styles = theme => ({
   root: {
     width: '100%',
     backgroundColor: theme.palette.background.paper,
+    color: "green"
   },
   completed: {
     color: 'green'
@@ -29,7 +30,7 @@ const iconStyles = {
 };
 
 const mapStateToProps = state => {
-  return { downloads: state.downloads };
+  return { downloads: state.root.downloads };
 };
 
 class DownloadList extends Component {
@@ -53,8 +54,11 @@ class DownloadList extends Component {
     // className={classes.root}
 //
 // 
+
+debugger;
     return (
-      <div >
+      <div className={classes.root}>
+      
       <List>
         {
           this.props.downloads.map((item, index) => 
@@ -69,8 +73,5 @@ class DownloadList extends Component {
     );
   }
 }
-const Lista = connect(mapStateToProps)(DownloadList)
-export default Lista;
-// const Form = connect(null, mapDispatchToProps)(DownloadList);
-// export default Form;
-//export default withStyles(styles)(DownloadList);
+
+export default withStyles(styles)(connect(mapStateToProps)(DownloadList));

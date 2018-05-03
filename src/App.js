@@ -72,16 +72,17 @@ class App extends Component {
 
   }
   componentWillMount(){
-    fetch().then((result)=>{
-  
-      result
-        .sort( (a, b) => {
-  
-          return b.data.progress - a.data.progress ;
-        })
-        .forEach( (item) => { store.dispatch( addDownload(item)); })
-        
-    });
+    store.dispatch( { downloads: []} );
+    // fetch().then((result)=>{
+    //   result
+    //     .sort( (a, b) => {
+    //       return b.data.progress - a.data.progress ;
+    //     })
+    //     .forEach( (item) => { 
+    //       //
+    //       store.dispatch( addDownload(item) ); 
+    //     })
+    // });
   }
   componentWillUnmount(){
 

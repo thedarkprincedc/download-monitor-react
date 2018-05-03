@@ -19,7 +19,7 @@ const styles = theme => ({
         overflowY:'scroll'
     },
     cont: {
-        height: "95vh"
+        height: "94vh",
     },
     papera: {
         padding: theme.spacing.unit * 2,
@@ -33,7 +33,7 @@ const styles = theme => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
         height: '70%',
-        marginTop: "16px",
+        marginTop: "10px",
         overflowY:'scroll'
     },
 });
