@@ -1,8 +1,10 @@
 import {combineReducers} from "redux";
 import downloadReducer from "./downloadReducer";
+import networkReducer from "./networkReducer";
 
 export default combineReducers(
     { 
-        root: downloadReducer 
+        downloads: downloadReducer,
+        network: networkReducer
     }
 );

@@ -1,17 +1,16 @@
-import { ADD_DOWNLOAD } from "../constants/action-types";
+//import { ADD_DOWNLOAD } from "../constants/action-types";
 
 const initialState = {
     list: [],
     isFetching: false
 }
 
-const downloadReducer = (state = initialState, action) => {
+const mapReducer = (state = initialState, action) => {
     switch(action.type){
-        case ADD_DOWNLOAD:
+        case "ADD_MAP":
             return Object.assign({}, {
                 list: [
                     ...action.payload, {
-                        id: action.payload.id,
                         name: action.payload.name,
                         data: action.payload.data || {}
                     }
@@ -23,4 +22,4 @@ const downloadReducer = (state = initialState, action) => {
     }
 }
 
-export default downloadReducer;
+export default mapReducer;

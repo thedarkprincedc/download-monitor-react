@@ -30,7 +30,7 @@ const iconStyles = {
 };
 
 const mapStateToProps = state => {
-  return { downloads: state.root.downloads };
+  return { downloads: state.downloads.list };
 };
 
 class DownloadList extends Component {
@@ -42,23 +42,17 @@ class DownloadList extends Component {
     }
   }
   componentDidMount(){
-    console.log(">>", this)
+
   }
   handleItemClick(event){
     //alert("item was clicked");
     //event.preventDefault();
   }
-
   render() {
     const { classes } = this.props;
-    // className={classes.root}
-//
-// 
-
-debugger;
-    return (
-      <div className={classes.root}>
-      
+    return ( 
+      <div className={classes.root}> 
+      { !this.state.show && <p class='error'>Error: Could not find any downloads</p>}
       <List>
         {
           this.props.downloads.map((item, index) => 
